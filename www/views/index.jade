@@ -1,8 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  form(action="/", method="post")
-    input(type="text",name="text",value="")
-    input(type="submit", name="submit")
+  .page-header
+    h1 Control Panel
+  p.lead
+    div(role='tabpanel')
+      // Nav tabs
+      ul.nav.nav-tabs(role='tablist')
+        li.active(role='presentation')
+          a(href='#home', aria-controls='home', role='tab', data-toggle='tab') Custom
+        li(role='presentation')
+          a(href='#profile', aria-controls='profile', role='tab', data-toggle='tab') Presets
+      // Tab panes
+      .tab-content
+        #home.tab-pane.active(role='tabpanel')
+          form(action="/", method="post")
+          fieldset
+            input(type="text",name="text",value="").form-control
+          fieldset
+            br
+            input(type="submit", name="submit", value="Display Text").btn.btn-primary
+        #profile.tab-pane(role='tabpanel') ...
