@@ -10,7 +10,7 @@ var sp = new SerialPort(config.port, {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Parcel Shelf [Control Panel]' });
+  res.render('index', { title: 'Parcel Shelf' });
 });
 
 /* POST home page */
