@@ -4,7 +4,8 @@ module.exports = {
 		baud: 115200
 	},
   presets: [
-    'Stop Tailgating',
-    'Turn Your High-Beam Off'
+    'Stop tailgating',
+    'Turn your high-beam off',
+    'Learn to indicate'
   ]
 }
