@@ -26,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
   // Send our presets out of our config.js into a local variable
   res.locals.presets = config.presets || [];
+
+  next();
 });
 
 app.use('/', routes);
