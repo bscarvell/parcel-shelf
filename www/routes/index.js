@@ -79,9 +79,8 @@ router.get('/login', function (req, res, next) {
 router.post('/login', function (req, res) {
   // Generate hash from required password
   var password = req.body.password || '';
-  console.log(req.body);
   var hash = crypto.createHash('sha256').update(password).digest('hex');
-  console.log("p: %s\nh:%s\nc:%s", password, hash, config.security.password);
+
   if (config.security.password == hash) {
     req.session.isAuthed = true;
     res.redirect('/');
