@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var config = require('../config');
-var SerialPort = require("SerialPort").SerialPort;
+var SerialPort = require("serialport").SerialPort;
 var crypto = require('crypto');
 
 /**
@@ -35,7 +35,7 @@ var authCheck = function (req, res, next) {
 
 //Create a connection to our serial port
 var sp = new SerialPort(config.serialPort.port, {
-	baudrate: config.baud
+	baudrate: config.serialPort.baud
 });
 
 /* GET home page. */
@@ -44,7 +44,7 @@ router.get('/', authCheck, function(req, res, next) {
 });
 
 /* POST home page */
-router.post('/', function (req, res, next) {
+router.post('/', authCheck, function (req, res, next) {
   var text = req.body.text || '';
 
   sp.write(text, function (err,results) {
