@@ -32,7 +32,7 @@ var authCheck = function (req, res, next) {
   }
 }
 
-/*
+
 //Create a connection to our serial port
 var sp = new SerialPort(config.serialPort.port, {
 	baudrate: config.baud
