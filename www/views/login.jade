@@ -1,0 +1,15 @@
+extends layout
+block content
+    .page-header
+        h1 Login
+    p.lead
+        div
+            if (error)
+                div.alert.alert-danger= error
+            br
+            form(action="/login",method="post")
+                fieldset
+                    input(type="password",name="password",value="",placeholder="Enter Password...")#password.form-control
+                fieldset
+                    br
+                    input(type="submit", name="submit", value="Login")#login.btn.btn-primary

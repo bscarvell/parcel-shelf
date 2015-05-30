@@ -29,6 +29,9 @@ html(lang='en')
           ul.nav.navbar-nav
             li.active
               a(href='#') Control Panel
+            if (isAuthed)
+              li
+                a(href='/logout') Logout
             //
               no use for this yet
               li
