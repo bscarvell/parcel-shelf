@@ -1,6 +1,6 @@
 module.exports = {
   serialPort: {
-	port: '/dev/cu.usbmodem1411',
+	port: '/dev/cu.usbmodem1411', // Reminder: cu.usbmodem1411 for local. - ttyACM0 for pi
 	baud: 115200
   },
   security: {
