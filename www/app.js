@@ -22,7 +22,7 @@ app.set('view cache',true);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({secret: 'trollololol', cookie: {maxAge: 6000}}));
+app.use(session({secret: '51fsadfgt132cvqarty52jxcvbsqyuyh3hxdfg', cookie: {maxAge: 6000}}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -30,7 +30,7 @@ app.use(function (req, res, next) {
   // Send our presets out of our config.js into a local variable
   res.locals.presets = config.presets || [];
   res.locals.isAuthed = req.session.isAuthed;
-  res.locals.title = 'Parcel Shelf';
+  res.locals.title = config.title;
   next();
 });
 
@@ -61,7 +61,7 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(er4r.status || 500);
+  res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     error: {}

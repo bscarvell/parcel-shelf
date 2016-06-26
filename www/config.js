@@ -1,6 +1,7 @@
 module.exports = {
+  title: 'Parcel Shelf',
   serialPort: {
-	port: '/dev/cu.usbmodem1411', // Reminder: cu.usbmodem1411 for local. - ttyACM0 for pi
+	port: '/dev/ttyACM0',
 	baud: 115200
   },
   security: {
